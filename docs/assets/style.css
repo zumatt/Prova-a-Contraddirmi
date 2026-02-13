@@ -1,0 +1,206 @@
+body{
+    font-family: 'Arial Narrow', sans-serif;
+    font-weight: normal;
+}
+
+*::selection {
+  background: #000000;
+  color: #ffffff;
+}
+
+header{
+    display: flex;
+    position: fixed;
+    background-color: white;
+    width: 100%;
+    top: 0;
+    padding: 10px 0px;
+    font-size: 1.5rem;
+}
+
+.menuItem{
+    margin-right: 20px;
+}
+
+a{
+    color: black;
+}
+
+a:hover{
+    color: #404040;
+}
+
+h1, h2{
+    text-align: center;
+}
+
+h1{
+   font-family: 'Helvetica Neue', sans-serif;
+   font-weight: 400;
+   font-size: 5rem;
+   background-color: white;
+   padding-top: 20px;
+   padding-bottom: 20px;
+   position: fixed;
+   top: 0px;
+   width: 100%;
+}
+
+h2{
+    margin: 20px 0px 0px 0px;
+    font-size: 2rem;
+    font-weight: 400; 
+}
+
+.intro{
+    margin-top: 200px;
+}
+
+.questions{
+    display: inline-block;
+    text-align: center;
+    margin: 0px 30px;
+    font-size: 3rem;
+    font-weight: 400;
+}
+
+.questions p{
+   margin: 5px 0px 0px 0px;
+}
+
+#quest1{
+    color: #ff0000;
+}
+
+#quest2{
+    color: #01504a;
+}
+
+#quest3{
+    color: #ff00dd;
+}
+
+#quest4{
+    color: #026002;
+}
+
+#quest5{
+    color: #000dff;
+}
+
+#quest6{
+    color: #685b15;
+}
+
+.chat{
+    margin-top: 140px;
+    margin-bottom: 100px;
+}
+
+.chatInput{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    width: 80%;
+    box-sizing: border-box;
+    border: solid 1px black;
+    background-color: white;
+    border-radius: 20px;
+    position: fixed;
+    bottom: 20px;
+    z-index: 10;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+input{
+    font-family: 'Arial Narrow', sans-serif;
+}
+
+#questionInput{
+    width: 95%;
+    border: none;
+    padding: 10px;
+    font-size: 2rem;
+    background-color: transparent;
+}
+
+::placeholder {
+    color: #000000;
+}
+
+#questionInput:focus{
+    outline: none;
+}
+
+#askButton{
+    width: 5%;
+    border: none;
+    background-color: black;
+    border-radius: 20px;
+    color: white;
+    font-size: 2.5rem;
+    padding-bottom: 8px;
+    cursor: pointer;
+}
+
+#askButton:hover{
+    background-color: #404040;
+}
+
+.chat{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.chatMessages{
+    margin-top: 80px;
+}
+
+.chatTitle{
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.label{
+    font-weight: lighter;
+    border: solid .5px black;
+    width: max-content;
+    padding: 2px 10px;
+    background-color: #000;
+    color: white;
+    border-radius: 20px;
+    font-size: 1.1rem;
+    margin: 0px 0px 0px 0px;
+}
+
+.input{
+    font-size: 1.8rem;
+    margin: 0px 0px 0px 0px;
+}
+
+.botMsg{
+    margin: 20px 0px 0px 50px;
+}
+
+.botMsg .input{
+    font-size: 2.2rem;
+    word-wrap: break-word;
+    line-height: 105%;
+}
+
+.outputMini {
+    font-size: 1.1rem;
+    line-height: 1.4;
+    display: block;
+    word-break: break-all;
+    overflow-wrap: break-word;
+}
+
+.botMsg .input strong {
+    display: block;
+    font-size: 1.4rem;
+    margin: 20px 0 0 0;
+}
