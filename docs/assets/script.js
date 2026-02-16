@@ -142,9 +142,6 @@ document.addEventListener('DOMContentLoaded', function() {
 		if (e.key === 'Enter') handleAsk();
 	});
 
-	// Hide chat at start
-	if (chatDiv) chatDiv.style.display = 'none';
-
 	// --- Expose chatHistory for debugging (optional, remove in production) ---
 	window._chatHistory = chatHistory;
 });

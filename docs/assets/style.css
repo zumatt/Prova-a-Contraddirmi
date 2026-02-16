@@ -1,6 +1,20 @@
 body{
     font-family: 'Arial Narrow', sans-serif;
     font-weight: normal;
+    font-size: 16px;
+}
+
+@media (max-width: 600px) { /* Mobile */
+    body{
+        font-size: 8px;
+        margin: 0;
+    }
+}
+
+@media (min-width: 2400px) { /* Big Screens */
+    body{
+        font-size: 26px;
+    }
 }
 
 *::selection {
@@ -15,7 +29,15 @@ header{
     width: 100%;
     top: 0;
     padding: 10px 0px;
-    font-size: 1.5rem;
+    font-size: 1.3em;
+    z-index: 2;
+}
+
+@media (max-width: 600px) { /* Mobile */
+    header{
+        margin: 0 5px;
+        font-size: 2em;
+    }
 }
 
 .menuItem{
@@ -37,31 +59,93 @@ h1, h2{
 h1{
    font-family: 'Helvetica Neue', sans-serif;
    font-weight: 400;
-   font-size: 5rem;
+   font-size: 3.5em;
    background-color: white;
+   margin: 0;
+   padding-top: 40px;
+}
+
+.titolo{
+   position: fixed;
+   top: 40px;
+   width: 100vw;
    padding-top: 20px;
    padding-bottom: 20px;
-   position: fixed;
-   top: 0px;
-   width: 100%;
+}
+
+@media (max-width: 600px) { /* Mobile */
+    h1{
+        font-size: 3.5em;
+    }
+
+    .titolo{
+        top: 2vh;
+    }
 }
 
 h2{
     margin: 20px 0px 0px 0px;
-    font-size: 2rem;
+    font-size: 2.5em;
     font-weight: 400; 
 }
 
+h3{
+   font-family: 'Helvetica Neue', sans-serif;
+   font-weight: bold;
+   font-size: 1em;
+   margin: 0;
+}
+
+section{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    columns: 2;
+    column-gap: 5vw;
+    margin-top: 10vh;
+}
+
+article{
+    width: 40%;
+}
+
+@media (max-width: 600px) { /* Mobile */
+    section{
+        flex-direction: column;
+        flex-wrap: nowrap;
+        margin-left: 5px;
+        margin-right: 5px;
+        margin-top: 5vh;
+        font-size: 12px;
+    }
+
+    article{
+        width: 100%;
+    }
+}
+
+article p{
+    font-size: 1.5em;
+    margin-top:0;
+    margin-bottom: 5vh;
+}
+
 .intro{
-    margin-top: 200px;
+    display: block;
+    margin-top: 20vh;
 }
 
 .questions{
     display: inline-block;
     text-align: center;
-    margin: 0px 30px;
-    font-size: 3rem;
+    font-size: 2.5em;
     font-weight: 400;
+}
+
+@media (max-width: 600px) { /* Mobile */
+    .questions{
+        margin: 0 5px;
+    }
 }
 
 .questions p{
@@ -93,8 +177,18 @@ h2{
 }
 
 .chat{
-    margin-top: 300px;
-    margin-bottom: 100px;
+    display: none;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20vh;
+    margin-bottom: 15vh;
+}
+
+@media (max-width: 600px) { /* Mobile */
+    .chat{
+        width: 90%;
+    }
 }
 
 .chatInput{
@@ -105,12 +199,18 @@ h2{
     box-sizing: border-box;
     border: solid 1px black;
     background-color: white;
-    border-radius: 20px;
+    border-radius: 30px;
     position: fixed;
     bottom: 20px;
     z-index: 10;
     left: 50%;
     transform: translate(-50%, 0);
+}
+
+@media (max-width: 600px) { /* Mobile */
+    .chatInput{
+        width: 90%;
+    }
 }
 
 input{
@@ -121,12 +221,13 @@ input{
     width: 95%;
     border: none;
     padding: 10px;
-    font-size: 2rem;
+    padding-left: 3vw;
+    font-size: 2em;
     background-color: transparent;
 }
 
 ::placeholder {
-    color: #000000;
+    color: #404040;
 }
 
 #questionInput:focus{
@@ -137,30 +238,46 @@ input{
     width: 5%;
     border: none;
     background-color: black;
-    border-radius: 20px;
+    border-radius: 30px;
     color: white;
-    font-size: 2.5rem;
-    padding-bottom: 8px;
+    font-size: 2em;
+    padding-bottom: 7px;
     cursor: pointer;
 }
 
-#askButton:hover{
-    background-color: #404040;
+@media (max-width: 1400px) { /* Tablet */
+    #askButton{
+        width: 8%;
+        padding: 0;
+    }
 }
 
-.chat{
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
+@media (max-width: 600px) { /* Mobile */
+    #askButton{
+        width: 15%;
+        font-size: 2.3em;
+        padding: 0;
+    }
+}
+
+
+#askButton:hover{
+    background-color: #404040;
 }
 
 .chatMessages{
     margin-top: 80px;
 }
 
+@media (max-width: 600px) { /* Mobile */
+    .chatMessages{
+        margin-top: 40px;
+    }
+}
+
 .chatTitle{
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.5em;
     font-weight: 400;
 }
 
@@ -172,12 +289,12 @@ input{
     background-color: #000;
     color: white;
     border-radius: 20px;
-    font-size: 1.1rem;
+    font-size: 1.1em;
     margin: 0px 0px 0px 0px;
 }
 
 .input{
-    font-size: 1.8rem;
+    font-size: 1.8em;
     margin: 0px 0px 0px 0px;
 }
 
@@ -185,14 +302,20 @@ input{
     margin: 20px 0px 0px 50px;
 }
 
+@media (max-width: 600px) { /* Mobile */
+    .botMsg{
+        margin: 20px 0px 0px 20px;
+    }
+}
+
 .botMsg .input{
-    font-size: 2.2rem;
+    font-size: 2.2em;
     word-wrap: break-word;
     line-height: 105%;
 }
 
 .outputMini {
-    font-size: 1.1rem;
+    font-size: .6em;
     line-height: 1.4;
     display: block;
     word-break: break-all;
@@ -201,6 +324,6 @@ input{
 
 .botMsg .input strong {
     display: block;
-    font-size: 1.4rem;
+    font-size: .8em;
     margin: 20px 0 0 0;
 }
