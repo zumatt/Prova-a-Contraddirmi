@@ -56,7 +56,11 @@ document.addEventListener('DOMContentLoaded', function() {
 		appendUserMsg(chatMessages, inputText);
 		const botMsg = createBotMsg(chatMessages);
 		const botInput = botMsg.querySelector('.input');
-		botInput.textContent = '...'; // thinking
+		botInput.innerHTML = `
+		<span class="thinking">
+			<span></span><span></span><span></span>
+		</span>
+		`;
 
 		// Prepare chat history for context (last 10 exchanges, alternate user/assistant)
 		const maxHistory = 10;
@@ -99,6 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			let data;
 			try {
 				data = JSON.parse(event.data);
+				//console.log("Received SSE data:", data);
 			} catch (e) {
 				data = { type: 'partial', text: event.data };
 			}
@@ -111,9 +116,11 @@ document.addEventListener('DOMContentLoaded', function() {
 				const match = htmlText.match(strongBiblioRegex);
 				if (match) {
 					const idx = htmlText.indexOf(match[0]);
-					const before = htmlText.slice(0, idx + match[0].length);
-					const after = htmlText.slice(idx + match[0].length);
-					htmlText = before + '<span class="outputMini"">' + after + '</span>';
+					var before = htmlText.slice(0, idx + match[0].length);
+					var after = htmlText.slice(idx + match[0].length);
+					before = marked.parse(before);
+					after = marked.parse(after);
+					htmlText = before + '<span class="outputMini">' + after + '</span>';
 				}
 				botInput.innerHTML = htmlText;
 			}
