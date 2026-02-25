@@ -1,6 +1,24 @@
 // --- Chatbot streaming integration ---
 document.addEventListener('DOMContentLoaded', function() {
-	// ...existing code...
+	const questionInput = document.getElementById('questionInput');
+
+	// Check if the URL contains ?type=installation
+	const urlParams = new URLSearchParams(window.location.search);
+	if (urlParams.get('type') === 'installation') {
+	    // Focus the input initially
+	    questionInput.focus();
+	
+	    // Keep focus on the input whenever the user interacts with the page
+	    document.addEventListener('click', () => {
+	        questionInput.focus();
+	    });
+	
+	    document.addEventListener('keydown', (e) => {
+	        if (e.target !== questionInput) {
+	            questionInput.focus();
+	        }
+	    });
+	}
 
 	// --- Temporary memory for chat history ---
 	const chatHistory = [];
