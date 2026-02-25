@@ -1,10 +1,14 @@
 // --- Chatbot streaming integration ---
 document.addEventListener('DOMContentLoaded', function() {
 	const questionInput = document.getElementById('questionInput');
+	const header = document.querySelector('header');
 
 	// Check if the URL contains ?type=installation
 	const urlParams = new URLSearchParams(window.location.search);
 	if (urlParams.get('type') === 'installation') {
+		//Hide the header
+		if (header) header.style.display = 'none';
+		
 	    // Focus the input initially
 	    questionInput.focus();
 	
